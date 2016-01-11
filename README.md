@@ -59,7 +59,7 @@ _Parameters_
 
 - `pid` is the monitored Java process pid
 - `interval` is the monitoring interval. The default value is 3 seconds. _Note_ that the capture of a thread dump is a relatively expensive operation, so the interval should be relatively large if you care about the Jscheduler execution footprint.
-- `policies` is a list of policies. The policies are a tuple with fields in the form (threadNameFilter, threadPriority, cpuAffinityPool). 
+- `policies` is a list of the scheduling policies
 
 The general syntax for the `policies` list is given below
 
