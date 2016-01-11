@@ -75,7 +75,7 @@ You can leave priority and cpu pool fields unspecified, in which case they will 
 "threadNameRegex1;;cpuPool1::threadNameRegex2;threadPriority2;::..."
 ```
 
-The `cpuPool` field follows the `taskset` command syntax, i.e. they it is a numerical list of processors separated by commas and may include ranges. For example `1,3,10-16:2` stands for the CPUS 1,3,10,12,14,16. 
+The `cpuPool` field follows the `taskset` command syntax, i.e. it is a numerical list of processors separated by commas and may include ranges. For example `1,3,10-16:2` stands for the CPUS 1,3,10,12,14,16. 
 
 
 
