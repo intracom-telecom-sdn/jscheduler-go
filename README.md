@@ -47,7 +47,7 @@ By being able to easily change the throughput and/or the latency of processing e
 ## Usage
 
 For the purpose of clarity we must define that
-> A scheduling policy or simply policy from now on will refer to a tuple of (thread priority, thread CPU affinity)
+> A scheduling policy or simply policy from now on will refer to a tuple of (thread name filter, thread priority, thread CPU affinity)
 
 You can invoke the Jscheduler from the command line with the following options
 
