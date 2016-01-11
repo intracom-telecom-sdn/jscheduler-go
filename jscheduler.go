@@ -3,7 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/georgepar/jscheduler-go/jscheduler"
+	"github.com/intracom-telecom-sdn/jscheduler-go/jscheduler"
 	"os"
 	"os/signal"
 	"sort"
