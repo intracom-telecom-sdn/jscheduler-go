@@ -49,7 +49,9 @@ By being able to easily change the throughput and/or the latency of processing e
 
 For the purpose of clarity we must define that
 > A scheduling policy or simply policy from now on will refer to a tuple of (nameFilter,  priority, affinityCpuPool)
-
+  - The `nameFilter` field is a regular expression that matches the names of the threads to which we will enforce this policy
+  - The `priority` field is an integer in the range `[-20,20)` that corresponds to the new niceness value of the matched threads
+  - The `affinityCpuPool` field stands for the cpu set to which the matched threads will be pinned to. It follows the `taskset` command syntax, i.e. it is a numerical list of processors separated by commas and may include ranges. For example `1,3,10-16:2` stands for the CPUS 1,3,10,12,14,16. 
 You can invoke the Jscheduler from the command line with the following options
 
 ```bash
@@ -61,9 +63,7 @@ _Parameters_
 - `pid` is the monitored Java process pid
 - `interval` is the monitoring interval. The default value is 3 seconds. _Note_ that the capture of a thread dump is a relatively expensive operation, so the interval should be relatively large if you care about the Jscheduler execution footprint.
 - `policies` is a list of the scheduling policies
-   - The `nameFilter` field is a regular expression that matches the names of the threads to which we will enforce this policy
-   - The `priority` field is an integer in the range `[-20,20)` that corresponds to the new niceness value of the matched threads
-   - The `affinityCpuPool` field stands for the cpu set to which the matched threads will be pinned to. It follows the `taskset` command syntax, i.e. it is a numerical list of processors separated by commas and may include ranges. For example `1,3,10-16:2` stands for the CPUS 1,3,10,12,14,16. 
+
 
 The general syntax for the `policies` list is given below
 
