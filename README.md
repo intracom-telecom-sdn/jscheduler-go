@@ -94,15 +94,14 @@ We give an example use case in the following gif
 - All the threads perform the same unit of CPU intensive work repeatedly
 - The benchmark runs on a VM with 4 VCPUs and 4GB of RAM
 
-**Testcase process**
-1. Run a successful setup of the Jscheduler
-2. Compile and run the benchmark
-3. Execute the Jscheduler and enforce the following policies:
-   - `pool-1-thread-2` thread: Highest priority, isolate in CPU 0
-   - `pool-1-thread-*` and `pool-2-thread-*` threads: Lowest priority, run in CPUs 1,2,3
+**Testcase process**  
+1. Run a successful setup of the Jscheduler  
+2. Compile and run the benchmark  
+3. Execute the Jscheduler and enforce the following policies:  
+   - `pool-1-thread-2` thread: Highest priority, isolate in CPU 0  
+   - `pool-1-thread-*` and `pool-2-thread-*` threads: Lowest priority, run in CPUs 1,2,3  
 
 **Notes**  
-
 1. The `pool-1-thread-2` thread throughput shows a _3x_ increase, i.e. from ~10 jobs/sec to ~30 jobs/sec  
 2. The `jscheduler` command needs to run with `sudo` in this case because the increase of a process or a thread priority is a protected operation in Linux
 
