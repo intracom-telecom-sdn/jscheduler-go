@@ -43,7 +43,7 @@ func decomposeTreadDumpLine(threadDumpLine string) (groups map[string]string, er
 }
 
 // Parse a Java thread dump taken with JStack (or with SIGQUIT)
-func ParseThreadDump(threadDump string, excluded map[string]struct{}) (*ThreadList, error) {
+func ParseThreadDump(threadDump string) (*ThreadList, error) {
 	nameToNative := NewThreadList()
 	lines := strings.Split(threadDump, "\n")
 
@@ -54,13 +54,22 @@ func ParseThreadDump(threadDump string, excluded map[string]struct{}) (*ThreadLi
 		}
 		// ParseInt base = 0 -> It is implied to be 16 by the 0x prefix
 		val, _ := strconv.ParseInt(fields["nid"], 0, 0)
-		if _, ignore := excluded[fields["name"]]; !ignore && fields["name"] != "" {
+		if fields["name"] != "" {
 			nameToNative = append(nameToNative, NewThread(fields["name"], int(val)))
 		}
 	}
 	return &nameToNative, nil
 }
 
+func ExcludeThreads(threads *ThreadList, excluded map[string]struct{}) (*ThreadList) {
+    threadsRemain := NewThreadList()
+    for _, thread := range *threads {
+    	if _, ignore := excluded[thread.Name]; !ignore {
+			threadsRemain = append(threadsRemain, thread)
+		}
+    }
+    return &threadsRemain
+}
 
 func GetJstackThreadDump(java_home string, pid string) (string, error) {
     user := os.Getenv("SUDO_USER")

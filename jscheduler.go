@@ -64,11 +64,17 @@ func main() {
 		}
 
 		// Parse thread dump
-		threads, err := jscheduler.ParseThreadDump(threadDump, modifiedThreads)
+		allThreads, err := jscheduler.ParseThreadDump(threadDump)
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
 		}
+
+        for _, t := range *allThreads {
+            threadCount[t.Name]++
+        }
+
+        threads := jscheduler.ExcludeThreads(allThreads, modifiedThreads)
 
 		// Filter and adjust thread policies
 		jscheduler.AdjustThreadPolicies(threads, policies.Get())
@@ -80,7 +86,6 @@ func main() {
 			if t.HasPolicy {
 				modifiedThreads[t.Name] = struct{}{}
 			}
-            threadCount[t.Name]++
 		}
 
 		time.Sleep(time.Duration(interval) * time.Millisecond)
