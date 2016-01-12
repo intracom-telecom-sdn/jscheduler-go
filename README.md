@@ -79,5 +79,8 @@ The `cpuPool` field follows the `taskset` command syntax, i.e. it is a numerical
 
 
 
-![](https://raw.githubusercontent.com/intracom-telecom-sdn/jscheduler-go/master/figs/zero2hero.gif) 
-*<div align="center">Zero to Hero with Jscheduler</div>*
+![Something](https://raw.githubusercontent.com/intracom-telecom-sdn/jscheduler-go/master/figs/zero2hero.gif) 
+*<p align="center">Zero to Hero with Jscheduler</p>*
+
+
+
