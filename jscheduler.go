@@ -88,7 +88,9 @@ func main() {
 }
 
 func printThreadCount(threadCount map[string]int) {
-	if len(threadCount) == 0 {
+	fmt.Printf("\n\n\n%-32s%-16s\n", "", "Statistics Count")
+    fmt.Printf("%-64s %-16s\n", "Thread Name", "Occurrences")
+    if len(threadCount) == 0 {
 		fmt.Println("No threads found")
 	}
 	keys := make([]string, 0, len(threadCount))
@@ -97,6 +99,6 @@ func printThreadCount(threadCount map[string]int) {
 	}
 	sort.Strings(keys)
 	for _, k := range keys {
-		fmt.Printf("%s: %d\n", k, threadCount[k])
+		fmt.Printf("%-64s %-16d\n", k, threadCount[k])
 	}
 }
