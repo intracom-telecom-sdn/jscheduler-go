@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/intracom-telecom-sdn/jscheduler-go.svg?branch=master)](https://travis-ci.org/intracom-telecom-sdn/jscheduler-go)
 
-# Jscheduler
+# Jscheduler [![Build Status](https://travis-ci.org/intracom-telecom-sdn/jscheduler-go.svg?branch=master)](https://travis-ci.org/intracom-telecom-sdn/jscheduler-go)
+
 
 
 ## Description
