@@ -61,24 +61,24 @@ func ParseThreadDump(threadDump string) (*ThreadList, error) {
 	return &nameToNative, nil
 }
 
-func ExcludeThreads(threads *ThreadList, excluded map[string]struct{}) (*ThreadList) {
-    threadsRemain := NewThreadList()
-    for _, thread := range *threads {
-    	if _, ignore := excluded[thread.Name]; !ignore {
+func ExcludeThreads(threads *ThreadList, excluded map[string]struct{}) *ThreadList {
+	threadsRemain := NewThreadList()
+	for _, thread := range *threads {
+		if _, ignore := excluded[thread.Name]; !ignore {
 			threadsRemain = append(threadsRemain, thread)
 		}
-    }
-    return &threadsRemain
+	}
+	return &threadsRemain
 }
 
 func GetJstackThreadDump(java_home string, pid string) (string, error) {
-    user := os.Getenv("SUDO_USER")
-    if user == "" {
-        user = os.Getenv("USER")
-    }   
-    cmd := fmt.Sprintf("sudo -u %s %s/bin/%s -l %s", user, java_home, "jstack", pid)
-    out, err := exec.Command("/bin/sh", "-c", cmd).Output()
-    return string(out), err 
+	user := os.Getenv("SUDO_USER")
+	if user == "" {
+		user = os.Getenv("USER")
+	}
+	cmd := fmt.Sprintf("sudo -u %s %s/bin/%s -l %s", user, java_home, "jstack", pid)
+	out, err := exec.Command("/bin/sh", "-c", cmd).Output()
+	return string(out), err
 }
 
 // Take a thread dump with JStack

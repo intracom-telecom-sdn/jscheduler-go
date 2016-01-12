@@ -71,19 +71,19 @@ func NewThreadPolicy() ThreadPolicy {
 }
 
 type Thread struct {
-	Name    string
-	Tid     int
-	Prio    int
-	Cpus    CpuPool
+	Name      string
+	Tid       int
+	Prio      int
+	Cpus      CpuPool
 	HasPolicy bool
 }
 
 func NewThread(name string, tid int) Thread {
 	return Thread{
-		Name:    name,
-		Tid:     tid,
-		Prio:    0,
-		Cpus:    NewCpuPool(runtime.NumCPU()),
+		Name:      name,
+		Tid:       tid,
+		Prio:      0,
+		Cpus:      NewCpuPool(runtime.NumCPU()),
 		HasPolicy: false,
 	}
 }

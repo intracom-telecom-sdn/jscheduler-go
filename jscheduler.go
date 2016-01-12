@@ -70,11 +70,11 @@ func main() {
 			os.Exit(1)
 		}
 
-        for _, t := range *allThreads {
-            threadCount[t.Name]++
-        }
+		for _, t := range *allThreads {
+			threadCount[t.Name]++
+		}
 
-        threads := jscheduler.ExcludeThreads(allThreads, modifiedThreads)
+		threads := jscheduler.ExcludeThreads(allThreads, modifiedThreads)
 
 		// Filter and adjust thread policies
 		jscheduler.AdjustThreadPolicies(threads, policies.Get())
@@ -94,8 +94,8 @@ func main() {
 
 func printThreadCount(threadCount map[string]int) {
 	fmt.Printf("\n\n\n%-32s%-16s\n", "", "Statistics Count")
-    fmt.Printf("%-64s %-16s\n", "Thread Name", "Occurrences")
-    if len(threadCount) == 0 {
+	fmt.Printf("%-64s %-16s\n", "Thread Name", "Occurrences")
+	if len(threadCount) == 0 {
 		fmt.Println("No threads found")
 	}
 	keys := make([]string, 0, len(threadCount))

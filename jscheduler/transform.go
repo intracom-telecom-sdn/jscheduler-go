@@ -3,10 +3,10 @@ package jscheduler
 import (
 	"fmt"
 	"golang.org/x/sys/unix"
+	"regexp"
 	"runtime"
 	"syscall"
 	"unsafe"
-    "regexp"
 )
 
 func AdjustThreadPolicies(threads *ThreadList, policies []ThreadPolicy) {
