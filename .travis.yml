@@ -21,4 +21,4 @@ install:
   - go get github.com/intracom-telecom-sdn/jscheduler-go
 
 script:
-  - bash travis-jobs/build.sh
+  - bash $GOPATH/src/github.com/intracom-telecom-sdn/jscheduler-go/travis-jobs/build.sh
