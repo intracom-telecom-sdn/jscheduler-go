@@ -28,6 +28,7 @@ By being able to easily change the throughput and/or the latency of processing e
 - [golang.org/x/sys/unix](https://godoc.org/golang.org/x/sys/unix) library
 - Java1.4+
 - Properly set `$GOPATH` and `$JAVA_HOME` environmental variables
+- Superuser permissions (if you need to increase thread priorities)
 
 ### Setup
 
@@ -78,9 +79,21 @@ You can leave priority and cpu pool fields unspecified, in which case they will 
 The `cpuPool` field follows the `taskset` command syntax, i.e. it is a numerical list of processors separated by commas and may include ranges. For example `1,3,10-16:2` stands for the CPUS 1,3,10,12,14,16. 
 
 
-
-![Something](https://raw.githubusercontent.com/intracom-telecom-sdn/jscheduler-go/master/figs/zero2hero.gif) 
+We give an example use case in the following gif
+![zero2hero.gif: Image not found](https://raw.githubusercontent.com/intracom-telecom-sdn/jscheduler-go/master/figs/zero2hero.gif) 
 *<p align="center">Zero to Hero with Jscheduler</p>*
+
+**Test characteristics**
+- We use a mock Java benchmark that creates 2 threadpools with 5 threads each
+- All the threads perform the same unit of CPU intensive work repeatedly
+- The benchmark runs on a VM with 4 VCPUs and 4GB of RAM
+At first we demonstrate how to run a successful setup of the Jscheduler. Then we compile and run the benchmark. Lastly we execute 
+the Jscheduler and enforce the following policies:
+- `pool-1-thread-2` thread: Highest priority, isolate in CPU 0
+- `pool-1-thread-*` and `pool-2-thread-*` threads: Lowest priority, run in CPUs 1,2,3
+
+*NOTES* 
+1. The `pool-1-thread-2` thread throughput has a _3x_ increase, i.e. from ~10 jobs/sec to ~30 jobs/sec. This is expected because in the default configuration each cpu is 
 
 
 
