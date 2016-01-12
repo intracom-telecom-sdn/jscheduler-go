@@ -89,7 +89,7 @@ We give an example use case in the following gif
 ![zero2hero.gif: Image not found](https://raw.githubusercontent.com/intracom-telecom-sdn/jscheduler-go/master/figs/zero2hero.gif) 
 *<p align="center">Zero to Hero with Jscheduler</p>*
 
-**Testcase characteristics**
+**Testcase info**
 - We use a mock Java benchmark that creates 2 threadpools with 5 threads each
 - All the threads perform the same unit of CPU intensive work repeatedly
 - The benchmark runs on a VM with 4 VCPUs and 4GB of RAM
