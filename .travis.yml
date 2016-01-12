@@ -21,5 +21,5 @@ install:
   - go get golang.org/x/sys/unix
   - go get github.com/intracom-telecom-sdn/jscheduler-go
 
-build:
+script:
   - bash travis-jobs/build.sh
