@@ -21,7 +21,7 @@ By being able to easily change the throughput and/or the latency of processing e
 - Dynamic name based thread matching
 - Dynamic CPU affinity enforcement
 - Dynamic thread priority enforcement
-- Low footprint execution
+- Low execution footprint 
 
 ## Getting Started
 
