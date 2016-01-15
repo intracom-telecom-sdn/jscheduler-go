@@ -1,7 +1,7 @@
 
 # Jscheduler [![Build Status](https://travis-ci.org/intracom-telecom-sdn/jscheduler-go.svg?branch=master)](https://travis-ci.org/intracom-telecom-sdn/jscheduler-go)
 
-*Dynamically change the CPU affinity and the priority of JVM threads*
+*Dynamically change the CPU affinity and the priority of Java threads*
 
 ## Description
 
