@@ -107,3 +107,17 @@ We give an example use case in the following gif
 
 
 
+## Go presentation invitation
+
+From [golang.org](http://golang.org
+
+> Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
+
+This presentation will not be a workshop or a tutorial, rather it will focus on the higher level features of the language. The main question we will try to answer is "Why Go?". Despite that it will contain some technical content and code snippets when it helps to illustrate the concepts.
+
+### Presentation Contents
+- What is Golang?
+- Core features of the language
+- Jscheduler showcase
+
+
