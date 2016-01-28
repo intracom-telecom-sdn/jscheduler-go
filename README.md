@@ -104,20 +104,3 @@ We give an example use case in the following gif
 **Notes**  
 1. The `pool-1-thread-2` thread throughput shows a _3x_ increase, i.e. from ~10 jobs/sec to ~30 jobs/sec  
 2. The `jscheduler` command needs to run with `sudo` in this case because the increase of a process or a thread priority is a protected operation in Linux
-
-
-
-## Go presentation invitation
-
-From [golang.org](http://golang.org
-
-> Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.
-
-This presentation will not be a workshop or a tutorial, rather it will focus on the higher level features of the language. The main question we will try to answer is "Why Go?". Despite that it will contain some technical content and code snippets when it helps to illustrate the concepts.
-
-### Presentation Contents
-- What is Golang?
-- Core features of the language
-- Jscheduler showcase
-
-
