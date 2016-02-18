@@ -86,7 +86,7 @@ You can leave priority and cpu pool fields unspecified, in which case they will 
 
 
 We give an example use case in the following gif
-![zero2hero.gif: Image not found](https://raw.githubusercontent.com/intracom-telecom-sdn/jscheduler-go/master/figs/zero2hero.gif) 
+![zero2hero.gif: Image not found](https://raw.githubusercontent.com/intracom-telecom-sdn/intracom-telecom-sdn.github.io/master/figs/zero2hero.gif) 
 *<p align="center">Zero to Hero with Jscheduler</p>*
 
 **Testcase info**
